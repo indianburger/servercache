@@ -1,0 +1,11 @@
+{
+  "name": "servercache",
+  "version": "1.0.0",
+  "description": "Cache server responses. Useful for working on the front end",
+  "main": "index.js",
+  "author": "Aravind Ramanathan",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^3.15.0"
+  }
+}

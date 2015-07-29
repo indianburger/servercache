@@ -15,7 +15,7 @@ http.createServer(onRequest).listen(port);
 console.log('server started on', port)
 
 function onRequest(clientReq, clientResp) {
-  let requestUrl = requestUrl
+  let requestUrl = clientReq.url
   console.log('serve: ' + requestUrl);
 
   if (cache.exists(requestUrl)) {

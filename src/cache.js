@@ -1,7 +1,9 @@
 let fs = require('fs')
 let path = require('path')
+let os = require('os')
 
-const CacheDir = path.join(__dirname, '/..', 'cache')
+const CacheDir = path.join(os.tmpdir(), 'servercache')
+console.log("Using cache directory:", CacheDir);
 
 function save (inputStream, inputPath) {
   let cachePath = path.join(CacheDir, inputPath)
@@ -18,6 +20,7 @@ function exists (resourcePath) {
 }
 
 function init () {
+  // TODO: perhaps a command line argument to force clear?
   if (!fs.existsSync(CacheDir))
     fs.mkdirSync(CacheDir)
 }
